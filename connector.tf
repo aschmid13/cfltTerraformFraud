@@ -16,7 +16,7 @@ resource "confluent_connector" "mysql_cdc_fraud" {
     config_nonsensitive = {
         "connector.class" = "MySQLCdcSource"
         "name": "CUSTOMERS_DB"
-        "database.hostname": "${aws_eip.mysql_customers_eip[0].public_ip}"
+        "database.hostname": "someHostname"
         "database.port": "5432"
         "database.dbname": "frauddetection"
         "database.server.name": "frauddetection"

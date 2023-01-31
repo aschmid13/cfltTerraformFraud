@@ -1,5 +1,5 @@
 resource "confluent_ksql_cluster" "ksql_cluster" {
-    display_name = "ksql-cluster-${random_id.env_display_id.hex}"
+    display_name = "ksql-cluster-someRandomId"
     csu = 4
     environment {
         id = confluent_environment.Dev.id

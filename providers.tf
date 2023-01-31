@@ -8,7 +8,6 @@ terraform {
 }
 
 provider "confluent" {
-<<<<<<< HEAD
   cloud_api_key    = var.confluent_cloud_api_key 
   cloud_api_secret = var.confluent_cloud_api_secret
 }
@@ -23,8 +22,6 @@ resource "confluent_role_binding" "app-manager-rb" {
   principal   = "User:${confluent_service_account.app-manager.id}"
   role_name   = "EnvironmentAdmin"
   crn_pattern = confluent_environment.Dev.resource_name
-=======
   cloud_api_key    = var.confluent_cloud_api_key
   cloud_api_secret = var.confluent_cloud_api_secret
->>>>>>> 62162f43f1126cadba4b453100df99198cef6ae2
 }

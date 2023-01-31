@@ -7,13 +7,11 @@ resource "confluent_environment" "Dev" {
 }
 
 resource "confluent_kafka_cluster" "dedicated" {
-  display_name = "dedicated_kafka_cluster"
+  display_name = "standard_kafka_cluster"
   availability = "MULTI_ZONE"
   cloud        = "AWS"
   region       = "us-east-2"
-  dedicated {
-    cku = 2
-  }
+  standard {}
 
   environment {
     id = confluent_environment.Dev.id

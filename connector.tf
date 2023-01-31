@@ -28,7 +28,7 @@ resource "confluent_connector" "mysql_cdc_fraud" {
         "output.key.format": "JSON_SR"
         "tasks.max": "1"
         "kafka.auth.mode": "SERVICE_ACCOUNT"
-        "kafka.service.account.id" = "${confluent_service_account.connectors.id}"
+        "kafka.service.account.id" = "${confluent_service_account.app-manager.id}"
     }
     depends_on = [
         confluent_role_binding.app-manager-rb,
@@ -60,7 +60,7 @@ resource "confluent_connector" "postgres_cdc_products" {
         "output.data.format": "JSON_SR"
         "tasks.max": "1"
         "kafka.auth.mode": "SERVICE_ACCOUNT"
-        "kafka.service.account.id" = "${confluent_service_account.connectors.id}"
+        "kafka.service.account.id" = "${confluent_service_account.app-manager.id}"
     }
     depends_on = [
         confluent_role_binding.app-manager-rb,
